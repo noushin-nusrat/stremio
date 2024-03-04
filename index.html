@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stremio</title>
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- daisy ui & tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.11.1/dist/full.css" rel="stylesheet">
+    <!-- mulish font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: "Mulish", sans-serif;
+        }
+
+        ;
+
+        
+    </style>
+</head>
+
+
+
+
+<body class="m-4 lg:m-16">
+    <div id="loading-spinner" class="text-center my-40 hidden">
+        <span class="loading loading-spinner text-error"></span>
+    </div>
+
+    <nav>
+        <div class="navbar justify-between p-4 mt-4 lg:mt-6 mx-4 lg:mx-6">
+            <div class="flex items-center justify-start">
+                <span class="font-mulish text-4xl font-extrabold">Stremio</span>
+            </div>
+            <div class="flex items-center justify-end space-x-4">
+                <button title="Home">
+                    <img src="./images/Frame 2.png" alt="">
+                </button>
+
+                <button title="Edit">
+                    <img src="./images/Frame.png" alt="">
+                </button>
+                <button title="Add">
+                    <img src="./images/Frame 4.png" alt="">
+                </button>
+
+                <button title="Flag">
+                    <img src="./images/Frame (1).png" alt="">
+                </button>
+                <button class="bg-purple-500 text-white font-bold py-4 px-6 rounded-full">Sign In</button>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <!-- banner section  -->
+        <section
+            class="bg-cover relative w-full bg-center h-screen bg-purple-900 mt-4 lg:mt-12   rounded-2xl flex justify-around items-center "
+            style="background-image: url('./images/Rectangle 1.png');">
+            <img class="w-full h-screen absolute mt-2" src="./images/bgbanner.png" alt="">
+            <div class="text-center lg:text-left">
+                <h1 class="text-4xl lg:text-7xl text-white font-extrabold p-2">
+                    Welcome to the <br> <span class="text-purple-600 font-bold">Stremio</span> Forum
+                </h1>
+                <p class="text-white text-lg lg:text-2xl my-6 lg:my-10">Share your favorite opinion and win and <br>
+                    wp forum coffee mug!</p>
+                <div class="flex items-center mt-4">
+                    <div class="relative">
+                        <input id="search-field" type="text" placeholder="Search here anything"
+                            class="border shadow-sm rounded-l-md px-4 py-2 w-full lg:w-72">
+                        <button type="submit" onclick="handleSearch()"
+                            class="absolute right-0 top-0 bg-purple-500 text-white font-semibold py-2 px-4 rounded ">
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden lg:block">
+                <img src="./images/Frame 9.png" alt="">
+            </div>
+        </section>
+
+    </header>
+    <main>
+
+        <!-- Let’s Discuss section -->
+        <section class="posts grid grid-cols-1 lg:grid-cols-3 my-8 mx-4 md:mx-0">
+            <!-- post -->
+            <div class="post-container col-span-2" id="post-container">
+                <div>
+                </div>
+            </div>
+            <div class="fav-posts bg-gray-200 p-3 h-fit my-5 rounded-lg" id="fav-div">
+                <div class="flex justify-between">
+                    <h3>Title</h3>
+                    <p><i class="fa-solid fa-check-double" style="color: #176b00;"></i> Mark as read (<span
+                            id="read">0</span>)</p>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Join Our Forum -->
+        <section
+            class="bg-cover relative w-full bg-center h-72 lg:h-96 bg-purple-900 mt-4 lg:mt-12       rounded-2xl text-white flex flex-col lg:flex-row justify-center items-center gap-6 "
+            style="background-image: url('./images/Rectangle 1.png');">
+            <div class="flex flex-col mb-4 text-center lg:text-left">
+                <h2 class="text-4xl lg:text-6xl text-white font-extrabold p-2">Join Our Forum</h2>
+                <p class="text-lg lg:text-2xl text-white p-2">Share your favorite opinion and win and wp forum coffee
+                    mug! <br>
+                    Yes, you can run unit tests and view the
+                    results directly within the app. </p>
+                <button class="bg-purple-500 text-white font-bold py-4 px-6 rounded-full w-52 mt-4">Registered
+                    Now</button>
+            </div>
+            <div>
+                <img src="./images/joinforum.png" alt="">
+            </div>
+
+        </section>
+
+        <!-- Latest Posts section -->
+        <section class="my-8 lg:my-12">
+            <div class="text-center">
+                <h2 class="text-4xl lg:text-5xl font-extrabold p-2">Latest Posts</h2>
+                <p class="text-lg lg:text-xl">Yes, you can run unit tests and view the results directly within the app.
+                    <br> The
+                    integrated testing features allow for a streamlined .
+                </p>
+            </div>
+            <div id="post-container-two" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 m-4 lg:m-10">
+
+            </div>
+        </section>
+    </main>
+    <footer class="h-72 bg-purple-100 mt-4 lg:mt-12 rounded-xl text-black flex flex-col justify-center items-center">
+        <h2 class="text-4xl lg:text-5xl text-black font-extrabold p-2">Stremio</h2>
+        <p class="text-lg lg:text-xl text-center my-4">Blend nostalgia with modernity. Classic elements meet
+            contemporary design
+            <br> for a charming, memorable digital experience.
+        </p>
+        <div>
+            <i class="fa-brands fa-twitter mx-2"></i>
+            <i class="fa-brands fa-facebook mx-2"></i>
+            <i class="fa-brands fa-instagram mx-2"></i>
+            <i class="fa-brands fa-github mx-2"></i>
+        </div>
+        <p class="text-lg lg:text-xl text-center my-4">2024, All Rights Reserved.</p>
+    </footer>
+    <script src="./index.js"></script>
+</body>
+
+</html>
